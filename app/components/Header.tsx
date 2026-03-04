@@ -5,6 +5,12 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // default region
+  const [region, setRegion] = useState({
+    label: "EN",
+    flag: "🇦🇪",
+  });
+
   const menuItems = [
     "Home",
     "About Us",
@@ -16,8 +22,8 @@ export default function Header() {
   ];
 
   return (
-    <header className="w-full bg-black text-white px-6 lg:px-12 py-5 flex items-center justify-between relative">
-
+    <header className="w-full bg-black text-white px-6 lg:px-12 py-5 flex items-center gap-10 relative">
+      
       {/* LOGO */}
       <div className="flex items-center">
         <img
@@ -46,19 +52,39 @@ export default function Header() {
             onClick={() => setOpen(!open)}
             className="hover:text-gray-300"
           >
-            Region ▾
+            {region.label} {region.flag} ▾
           </button>
 
           {open && (
-            <div className="absolute top-10 left-0 bg-white text-black w-40 shadow-lg">
-              <div className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                EN
+            <div className="absolute top-10 left-0 bg-white text-black w-40 shadow-lg rounded-md overflow-hidden">
+              <div
+                onClick={() => {
+                  setRegion({ label: "EN", flag: "🇦🇪" });
+                  setOpen(false);
+                }}
+                className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              >
+                EN 🇦🇪
               </div>
-              <div className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                🇮🇳
+
+              <div
+                onClick={() => {
+                  setRegion({ label: "EN", flag: "🇮🇳" });
+                  setOpen(false);
+                }}
+                className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              >
+                EN 🇮🇳
               </div>
-              <div className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                AR
+
+              <div
+                onClick={() => {
+                  setRegion({ label: "AR", flag: "🇦🇪" });
+                  setOpen(false);
+                }}
+                className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              >
+                AR 🇦🇪
               </div>
             </div>
           )}
@@ -66,7 +92,7 @@ export default function Header() {
       </nav>
 
       {/* RIGHT BUTTON (Desktop Only) */}
-      <div className="hidden lg:block">
+      <div className="hidden lg:block ml-auto">
         <button className="px-6 py-3 border border-white bg-black text-white hover:bg-white hover:text-black transition duration-300">
           Schedule a Consultation
         </button>
@@ -75,15 +101,16 @@ export default function Header() {
       {/* MOBILE HAMBURGER */}
       <button
         onClick={() => setMobileOpen(true)}
-        className="lg:hidden text-3xl"
+        className="lg:hidden text-3xl ml-auto"
       >
         ☰
       </button>
 
       {/* MOBILE SIDEBAR */}
       <div
-        className={`fixed top-0 left-0 h-full w-[280px] bg-black text-white transform transition-transform duration-300 z-50
-        ${mobileOpen ? "translate-x-0" : "-translate-x-full"}`}
+        className={`fixed top-0 left-0 h-full w-[280px] bg-black text-white transform transition-transform duration-300 z-50 ${
+          mobileOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
       >
         {/* Close Button */}
         <div className="flex justify-between items-center px-6 py-5 border-b border-gray-700">
@@ -109,9 +136,9 @@ export default function Header() {
           <div className="border-t border-gray-700 pt-6">
             <p className="mb-3 text-gray-400">Region</p>
             <div className="space-y-3">
-              <div className="cursor-pointer hover:text-gray-300">EN</div>
-              <div className="cursor-pointer hover:text-gray-300">🇮🇳</div>
-              <div className="cursor-pointer hover:text-gray-300">AR</div>
+              <div className="cursor-pointer hover:text-gray-300">EN 🇦🇪</div>
+              <div className="cursor-pointer hover:text-gray-300">EN 🇮🇳</div>
+              <div className="cursor-pointer hover:text-gray-300">AR 🇦🇪</div>
             </div>
           </div>
 
