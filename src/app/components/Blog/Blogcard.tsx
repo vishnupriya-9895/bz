@@ -2,7 +2,8 @@ import React from 'react'
 
 const Blogcard = () => {
   return (
-    <div> <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-10 place-items-center">
+    <div>
+       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-10 place-items-center">
             {[1, 2, 3].map((_, i) => (
               <div
                 key={i}
@@ -31,10 +32,21 @@ const Blogcard = () => {
                   <span>Technology & Business</span>
                 </div>
 
-                <p className="text-gray-700">
-                  Bridging the gap between AI and real-world data using
-                  Retrieval Augmented Generation.
-                </p>
+              <h6
+  className="text-black"
+  style={{
+    fontFamily: '"Plus Jakarta Sans", sans-serif',
+    fontSize: "18px",
+    fontWeight: 600,
+    lineHeight: "22px",
+    letterSpacing: "0.5px",
+    marginTop: 0,
+    marginBottom: "8px",
+  }}
+>
+                         Bridging the Gap: How RAG (Retrieval Augmented Generation) is Transforming Generative AI
+
+</h6>
 
                 <span className="text-black text-xs sm:text-sm">
                   Apr 14 • 2024
