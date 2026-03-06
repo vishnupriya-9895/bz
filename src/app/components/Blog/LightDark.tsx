@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 const LightDark = () => {
   const [dark, setDark] = useState(false);
 
-  // Load saved theme
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
 
@@ -19,35 +18,26 @@ const LightDark = () => {
   }, []);
 
   const toggleTheme = () => {
-    const html = document.documentElement;
+    const newTheme = !dark;
+    setDark(newTheme);
 
-    if (html.classList.contains("dark")) {
-      html.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setDark(false);
-    } else {
-      html.classList.add("dark");
+    if (newTheme) {
+      document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
-      setDark(true);
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   };
 
   return (
     <button
       onClick={toggleTheme}
-      className="
-        fixed bottom-4 left-4 z-50
-        px-4 py-2 text-sm rounded-lg
-        border
-        transition-all duration-300
-
-        bg-white text-black border-black
-        dark:bg-black dark:text-white dark:border-white
-
-        hover:bg-orange-500 hover:text-white
-      "
+      className="cursor-pointer border border-white/30 px-5 py-2.5 text-[10px] font-bold tracking-[0.2em] uppercase transition-all hover:bg-white hover:text-black dark:border-white/30 dark:hover:bg-white dark:hover:text-black"
     >
-      {dark ? "Light Mode" : "Dark Mode"}
+      <span>LIGHT</span>
+      {" / "}
+      <span>DARK</span>
     </button>
   );
 };

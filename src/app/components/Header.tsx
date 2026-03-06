@@ -98,9 +98,18 @@ const Header = () => {
         {/* Right Section */}
         <div className="flex items-center gap-6">
           {/* Desktop Button */}
-          <button className="hidden lg:block border border-white text-white font-bold px-10 py-5 hover:bg-white hover:text-black transition">
-            Schedule a consultation
-          </button>
+        <button className="hidden lg:block relative overflow-hidden group border border-white text-white font-bold px-13 py-5 hover:bg-white transition">
+
+  <span className="absolute top-1/2 left-1/2 w-[400%] h-[400%] bg-white 
+  -translate-x-1/2 -translate-y-1/2 rotate-45 
+  scale-0 group-hover:scale-100 
+  transition-transform duration-300 ease-out"></span>
+
+  <span className="relative z-10 text-white group-hover:text-orange-500 transition-colors duration-300">
+    Schedule a consultation
+  </span>
+
+</button>
 
           {/* Mobile Menu Button */}
           <button
