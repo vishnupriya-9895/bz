@@ -161,13 +161,13 @@ const Slider = () => {
           </div>
         </div>
 
-        <div className="flex justify-center space-x-3 mb-10 w-full px-4">
+        <div className="flex justify-center space-x-3 mb-8 w-full px-4">
           {[0, 1, 2, 3].map((i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                current === i ? "bg-yellow-400 scale-125" : "bg-gray-400"
+                current === i ? "bg-[#f79d0f] " : "bg-gray-400"
               }`}
             />
           ))}

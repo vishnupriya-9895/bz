@@ -74,7 +74,7 @@ const Page = () => {
     tracking-[0.5px]
     
     mb-[8px]
-    mt-[20px]
+    mt-[25px]
   "
           >
             Categories

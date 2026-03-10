@@ -25,26 +25,25 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full bg-black z-50">
-      <div className="w-full h-[80px] flex items-center justify-between px-2">
-        
+      <div className="w-full h-[80px] flex items-center justify-between px-3">
+
         {/* Logo */}
         <img
-          className="w-[150px] h-auto"
+          className="w-[140px] xl:w-[150px] h-auto"
           src="https://bzanalytics.ai/assets/bz/bq.png"
           alt="logo"
         />
 
         {/* Desktop Navigation */}
-        <ul className="hidden lg:flex ml-7 items-center gap-2 text-[15px] font-bold">
-          <span className="text-white text-[13px]">•</span>
+        <ul className="hidden min-[1000px]:flex ml-3 xl:ml-7 items-center gap-1 xl:gap-2 text-[13px] xl:text-[15px] font-bold">
+          <span className="text-white text-[12px]">•</span>
 
           {navItems.map((item, index) => (
-            <li key={index} className="flex items-center gap-4">
-              <span className="cursor-pointer hover:text-orange-500 text-white transition">
+            <li key={index} className="flex items-center gap-2 xl:gap-4">
+              <span className="cursor-pointer hover:text-orange-500 text-white transition whitespace-nowrap">
                 {item.name}
               </span>
 
-              {/* Language dropdown beside Contact Us */}
               {item.name === "Contact Us" && (
                 <div className="relative ml-2">
                   <button
@@ -53,14 +52,15 @@ const Header = () => {
                   >
                     <img
                       src={selectedLang.flag}
-                      className="w-6 h-6 rounded-full object-cover"
+                      className="w-5 h-5 rounded-full object-cover"
                       alt="flag"
                     />
                     {selectedLang.label}
+
                     {openLang ? (
-                      <FiChevronUp size={18} />
+                      <FiChevronUp size={16} />
                     ) : (
-                      <FiChevronDown size={18} />
+                      <FiChevronDown size={16} />
                     )}
                   </button>
 
@@ -89,41 +89,45 @@ const Header = () => {
               )}
 
               {index !== navItems.length - 1 && (
-                <span className="text-white text-[13px]">•</span>
+                <span className="text-white text-[12px]">•</span>
               )}
             </li>
           ))}
         </ul>
 
         {/* Right Section */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-3">
+
           {/* Desktop Button */}
-        <button className="hidden lg:block relative overflow-hidden group border border-white text-white font-bold px-13 py-5 hover:bg-white transition">
+          <button className="hidden min-[1000px]:block relative overflow-hidden group border border-white text-white font-bold px-4 xl:px-10 py-2 xl:py-4 hover:bg-white transition text-[13px] xl:text-[15px]">
 
-  <span className="absolute top-1/2 left-1/2 w-[400%] h-[400%] bg-white 
-  -translate-x-1/2 -translate-y-1/2 rotate-45 
-  scale-0 group-hover:scale-100 
-  transition-transform duration-300 ease-out"></span>
+            <span
+              className="absolute top-1/2 left-1/2 w-[400%] h-[400%] bg-white 
+              -translate-x-1/2 -translate-y-1/2 rotate-45 
+              scale-0 group-hover:scale-100 
+              transition-transform duration-300 ease-out"
+            ></span>
 
-  <span className="relative z-10 text-white group-hover:text-orange-500 transition-colors duration-300">
-    Schedule a consultation
-  </span>
+            <span className="relative z-10 text-white group-hover:text-orange-500 transition-colors duration-300">
+              Schedule a consultation
+            </span>
 
-</button>
+          </button>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-white"
+            className="min-[1000px]:hidden text-white"
             onClick={() => setOpenMenu(!openMenu)}
           >
             {openMenu ? <FiX size={28} /> : <FiMenu size={28} />}
           </button>
+
         </div>
       </div>
 
       {/* Mobile Menu */}
       {openMenu && (
-        <div className="lg:hidden bg-black px-6 py-6 space-y-4">
+        <div className="min-[1000px]:hidden bg-black px-6 py-6 space-y-4">
           {navItems.map((item, index) => (
             <div
               key={index}
