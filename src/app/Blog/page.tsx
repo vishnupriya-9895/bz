@@ -1,12 +1,14 @@
 "use client";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import Blogcard from "../components/Blog/Blogcard";
-import Button from "../components/Blog/Button";
-import Hero from "../components/Blog/Hero";
-import Slider from "../components/Blog/Slider";
-import Arrow from "../components/Blog/Arrow";
-import Whatsapp from "../components/Blog/Whatsapp";
-import LightDark from "../components/Blog/LightDark";
+
+
+import Blogcard from "@/src/components/Blog/Blogcard";
+import Whatsapp from "@/src/components/Blog/Whatsapp";
+import LightDark from "@/src/components/Blog/LightDark";
+import Arrow from "@/src/components/Blog/Arrow";
+import Button from "@/src/components/Blog/Button";
+import Hero from "@/src/components/Blog/Hero";
+import Slider from "@/src/components/Blog/Slider";
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["200"],
@@ -16,6 +18,9 @@ const plusJakarta = Plus_Jakarta_Sans({
 const Page = () => {
   return (
     <div className={plusJakarta.className}>
+      <div className="fixed left-3 top-[90%] z-[9999]">
+        <LightDark />
+      </div>
       {/* heading  */}
       <Hero />
       {/* second */}
@@ -74,7 +79,7 @@ const Page = () => {
     tracking-[0.5px]
     
     mb-[8px]
-    mt-[25px]
+    mt-[20px]
   "
           >
             Categories
@@ -88,7 +93,7 @@ const Page = () => {
       {/*  */}
       <Arrow />
       <Whatsapp />
-      <LightDark />
+      
     </div>
   );
 };

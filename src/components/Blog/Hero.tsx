@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const Hero = () => {
@@ -5,7 +6,7 @@ const Hero = () => {
     <>
       <div className="relative h-[50vh] md:h-[60vh]">
         
-        {/* Background Image */}
+     
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{

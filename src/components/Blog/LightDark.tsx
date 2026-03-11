@@ -33,11 +33,11 @@ const LightDark = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="cursor-pointer border border-white/30 px-5 py-2.5 text-[10px] font-bold tracking-[0.2em] uppercase transition-all hover:bg-white hover:text-black dark:border-white/30 dark:hover:bg-white dark:hover:text-black"
+      className="cursor-pointer border border-white px-1 py-2 text-[10px] font-bold tracking-[0.2em] uppercase transition-all hover:bg-white hover:text-black dark:border-white/30 dark:hover:bg-white dark:hover:text-black"
     >
-      <span>LIGHT</span>
-      {" / "}
-      <span>DARK</span>
+      <span className="text-bold">LIGHT</span>
+      {"/"}
+      <span className="text-bold">DARK</span>
     </button>
   );
 };

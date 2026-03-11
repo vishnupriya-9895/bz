@@ -17,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${plusJakarta.className} antialiased`}>
+        
         {children}
       </body>
     </html>

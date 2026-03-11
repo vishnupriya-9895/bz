@@ -11,7 +11,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="w-full h-[550px] bg-[#111] text-[#EAEAEA] font-['Plus_Jakarta_Sans']">
+<footer className="w-full h-[550px] bg-[#111] text-[#EAEAEA] font-['Plus_Jakarta_Sans'] bg-[url('https://bzanalytics.ai/assets/images/backgrounds/footer-bg-1.png')] bg-cover bg-center bg-no-repeat">
       <div className="max-w-[1300px] mx-auto px-6 py-14">
 
    
@@ -21,9 +21,9 @@ const Footer = () => {
 
         
             <div className="text-center lg:text-left">
-              <p className="text-[16px] font-medium tracking-[0.5px] leading-[30px]">
-                Let’s start working together
-              </p>
+           <p className="text-[16px] font-normal tracking-[0.5px] leading-[40px] mb-[9px]">
+  Let’s start working together
+</p>
 
               <h2 className="text-3xl md:text-5xl font-bold mt-3 hover:text-orange-400 cursor-pointer transition">
                 hello@bzanalytics.ai
@@ -31,7 +31,7 @@ const Footer = () => {
             </div>
 
           
-            <hr className="my-10 border-gray-700 w-full" />
+         <hr className="my-7 border-t border-gray-500/40 w-full" />
 
         
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -80,7 +80,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="bg-[#0000004D] p-10 rounded-xl text-center space-y-[10px] w-full max-w-[300px]">
+          <div className="bg-[#0000004D] p-10 rounded-xl  space-y-[10px] w-full max-w-[300px]">
 
             <img
               src="https://bzanalytics.ai/assets/images/digital-marketing/dm-external/footer-logo-new.png"
@@ -88,18 +88,17 @@ const Footer = () => {
               className="w-[150px] mx-auto"
             />
 
-            <h3 className="text-[20px] font-semibold">
-              Subscribe now
-            </h3>
-
-            <p className="text-gray-400">
-              Empower Every Mind
-            </p>
+            <h3 className="text-[19px] text-left text-white ">
+  Subscribe now
+</h3>
+          <p className="flex flex-1 items-center text-left text-[#D0D0D0] font-normal text-[14px] leading-[22px] ">
+  Empower Every Mind
+</p>
 
             <input
               type="email"
               placeholder="Email"
-              className="w-full bg-black border border-gray-700 px-4 py-3 outline-none focus:border-orange-400"
+              className="w-full mb-5 bg-black border border-black px-4 py-3 outline-none "
             />
 
             <button className="w-full bg-orange-400 py-3 font-medium hover:bg-white hover:text-orange-400 transition">
