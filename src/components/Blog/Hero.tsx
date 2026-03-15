@@ -6,7 +6,7 @@ const Hero = () => {
     <>
       <div className="relative h-[50vh] md:h-[60vh]">
         
-     
+        {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -19,8 +19,8 @@ const Hero = () => {
         <div
           className="
             absolute inset-0
-            bg-gradient-to-b
-            from-white/70 via-white/40 to-white/80
+            bg-gradient-to-t
+            from-white/70 via-white/30 to-white/80 to-transparent 
             dark:from-black/89 dark:via-black/50 dark:to-black/90
           "
         ></div>

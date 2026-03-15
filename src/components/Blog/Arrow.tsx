@@ -1,12 +1,10 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
 import { BsArrowUp } from "react-icons/bs";
 
 const Arrow = () => {
   const [progress, setProgress] = useState(0);
   const [visible, setVisible] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;

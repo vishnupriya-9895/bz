@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 type Blog = {
@@ -35,8 +35,9 @@ const Blogcard = () => {
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-10 items-stretch">
         {blogs.map((blog) => (
+          <Link href={`/blog/${blog.id}`} key={blog.id}>
           <div
-            key={blog.id}
+           
             className="w-full max-w-[374px] h-full
             bg-[#f7f7f7]
             rounded-[10px]
@@ -67,13 +68,14 @@ const Blogcard = () => {
                 {blog.title}
               </h6>
 
-              {/* Date & Read Time */}
+             
               <span className="text-black text-xs  sm:text-sm mt-auto">
                 {blog.date} • {blog.readTime}
               </span>
 
             </div>
           </div>
+          </Link>
         ))}
       </div>
     </div>

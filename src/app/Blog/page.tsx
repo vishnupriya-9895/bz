@@ -1,7 +1,5 @@
 "use client";
 import { Plus_Jakarta_Sans } from "next/font/google";
-
-
 import Blogcard from "@/src/components/Blog/Blogcard";
 import Whatsapp from "@/src/components/Blog/Whatsapp";
 import LightDark from "@/src/components/Blog/LightDark";
