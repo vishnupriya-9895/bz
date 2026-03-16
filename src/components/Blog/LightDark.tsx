@@ -6,7 +6,7 @@ const LightDark = () => {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
+    const savedTheme = localStorage.getItem("theme") || "light";
 
     if (savedTheme === "dark") {
       document.documentElement.classList.add("dark");
@@ -31,14 +31,41 @@ const LightDark = () => {
   };
 
   return (
-    <button
-      onClick={toggleTheme}
-      className="cursor-pointer border border-white px-1 py-2 text-[10px] font-bold tracking-[0.2em] uppercase transition-all hover:bg-white hover:text-black dark:border-white/30 dark:hover:bg-white dark:hover:text-black"
-    >
-      <span className="text-bold">LIGHT</span>
-      {"/"}
-      <span className="text-bold">DARK</span>
-    </button>
+<button
+  onClick={toggleTheme}
+  className="
+  fixed bottom-[15px] left-[15px] z-[1000]
+  bg-black text-white
+  text-[15px] font-extrabold
+  px-[7px] py-[5px]
+  border border-white
+  overflow-hidden
+  transition-all duration-500
+  cursor-pointer
+  group
+  "
+>
+  
+  {/* animation layer */}
+  <span
+    className="
+    absolute left-1/2 top-1/2
+    w-[150%] h-0
+    bg-white
+    -translate-x-1/2 -translate-y-1/2
+    rotate-[-25deg]
+    transition-all duration-300
+    group-hover:h-[400%]
+    -z-10
+    "
+  ></span>
+
+  {/* text */}
+  <span className="relative z-10 group-hover:text-orange-500 transition-colors duration-300">
+    Light / Dark
+  </span>
+
+</button>
   );
 };
 

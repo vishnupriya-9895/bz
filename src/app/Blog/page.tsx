@@ -89,8 +89,10 @@ const Page = () => {
         </div>
       </div>
       {/*  */}
-      <Arrow />
-      <Whatsapp />
+    <div className="fixed right-2 bottom-3 sm:right-4 sm:bottom-4 md:right-6 md:bottom-6 flex flex-col gap-2 sm:gap-3 z-[9999]">
+  <Arrow />
+  <Whatsapp />
+</div>
       
     </div>
   );

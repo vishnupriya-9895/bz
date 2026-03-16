@@ -1,51 +1,72 @@
+"use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checkTheme = () => {
+      const isDark = document.documentElement.classList.contains("dark");
+      setDarkMode(isDark);
+    };
+
+    checkTheme();
+
+    const observer = new MutationObserver(checkTheme);
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <>
-      <div className="relative h-[50vh] md:h-[60vh]">
-        
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://bzanalytics.ai/assets/images/backgrounds/page-header-bg-1-1.jpg')",
-          }}
-        />
+<div className="relative h-[45vh] sm:h-[50vh] md:h-[60vh] flex items-center overflow-hidden">
 
-        {/* Overlay (LIGHT + DARK AUTO SWITCH) */}
-        <div
-          className="
-            absolute inset-0
-            bg-gradient-to-t
-            from-white/70 via-white/30 to-white/80 to-transparent 
-            dark:from-black/89 dark:via-black/50 dark:to-black/90
-          "
-        ></div>
+      {/* Background */}
+     <div
+  className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage:
+      "url('https://bzanalytics.ai/assets/images/backgrounds/page-header-bg-1-1.jpg')",
+  }}
+/>
 
-        {/* Content */}
+      {/* Overlay */}
+      <div
+        className={`absolute inset-0 ${
+          darkMode
+            ? "bg-gradient-to-b from-black/90 via-black/50 to-black/90"
+            : "bg-gradient-to-b from-white/70 via-white/40 to-white/80"
+        }`}
+      />
+
+      {/* Content */}
+      <div className="relative z-10 w-full px-4 sm:px-6 md:px-20 lg:px-40">
+
         <div
-          className="
-            relative z-10
-            px-6 sm:px-10 md:px-20 lg:px-40
-            pt-32 sm:pt-40 md:pt-52
-            md:text-left
-          "
+          className={`text-base sm:text-lg md:text-xl ${
+            darkMode ? "text-white" : "text-black"
+          }`}
         >
-          <div className="mb-0 text-base sm:text-lg md:text-xl">
-            <span>Home</span>
-            <span className="mx-2">.</span>
-            <span>Blogs</span>
-          </div>
-
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold">
-            Blogs
-          </h1>
+          <span>Home</span>
+          <span className="mx-2">.</span>
+          <span>Blogs</span>
         </div>
+
+        <h1
+          className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold ${
+            darkMode ? "text-white" : "text-black"
+          }`}
+        >
+          Blogs
+        </h1>
+
       </div>
-    </>
+    </div>
   );
 };
 

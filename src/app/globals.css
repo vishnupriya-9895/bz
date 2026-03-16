@@ -1,37 +1,22 @@
 @import "tailwindcss";
 
-/* =========================
-   LIGHT MODE (default)
-========================= */
+/* LIGHT MODE */
 html {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: white;
+  color: black;
 }
 
-/* =========================
-   DARK MODE
-========================= */
+/* DARK MODE */
 html.dark {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: black;
+  color: white;
 }
 
-/* =========================
-   GLOBAL SMOOTH TRANSITION
-========================= */
+/* Smooth transition */
 html,
 body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-/* =========================
-   OPTIONAL SECTION SUPPORT
-   (if some sections need bg)
-========================= */
-.section {
-  background-color: white;
-}
-
-html.dark .section {
-  background-color: black;
+html, body {
+  overflow-x: hidden;
 }
