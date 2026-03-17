@@ -136,10 +136,20 @@ const Header = () => {
           </div>
 
           {/* Desktop Button */}
-          <button className="hidden min-[1000px]:block border border-white text-white font-bold px-4 xl:px-10 py-2 xl:py-4 hover:bg-white hover:text-orange-500 transition text-[13px] xl:text-[15px]">
-            Schedule a consultation
-          </button>
+          <button className="hidden min-[1000px]:block relative overflow-hidden group border border-white text-white font-bold px-4 xl:px-10 py-2 xl:py-4 hover:bg-white transition text-[13px] xl:text-[15px]">
 
+            <span
+              className="absolute top-1/2 left-1/2 w-[400%] h-[400%] bg-white 
+              -translate-x-1/2 -translate-y-1/2 rotate-45 
+              scale-0 group-hover:scale-100 
+              transition-transform duration-300 ease-out"
+            ></span>
+
+            <span className="relative z-10 text-white group-hover:text-orange-500 transition-colors duration-300">
+              Schedule a consultation
+            </span>
+
+          </button>
           {/* Mobile Menu Button */}
           <button
             className="min-[1000px]:hidden text-white p-1"
@@ -151,7 +161,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+  
       {openMenu && (
         <div className="min-[1000px]:hidden bg-black px-4 py-5 space-y-3">
 
@@ -164,7 +174,7 @@ const Header = () => {
             </div>
           ))}
 
-          {/* ✅ Language inside menu */}
+       
           <div className="pt-3">
             <button
               onClick={() => setOpenLangMobileMenu(!openLangMobileMenu)}
