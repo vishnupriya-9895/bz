@@ -46,7 +46,7 @@ const LightDark = () => {
   "
 >
   
-  {/* animation layer */}
+
   <span
     className="
     absolute left-1/2 top-1/2
@@ -60,7 +60,7 @@ const LightDark = () => {
     "
   ></span>
 
-  {/* text */}
+ 
   <span className="relative z-10 group-hover:text-orange-500 transition-colors duration-300">
     Light / Dark
   </span>
