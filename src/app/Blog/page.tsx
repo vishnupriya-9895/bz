@@ -22,11 +22,7 @@ const Page = () => {
       {/* heading  */}
       <Hero />
       {/* second */}
-      <div
-        className="
-  py-12 sm:py-16 md:py-20 
-  px-6 sm:px-10 md:px-20 lg:px-40"
-      >
+    <div className="py-12 sm:py-16 md:py-20 px-5 lg:px-20 xl:px-32">
         <h2
           className="
     text-center
@@ -43,26 +39,27 @@ const Page = () => {
           Welcome to Bz Analytics Blogs
         </h2>
 
-    <p
+<p
   className="
     text-center
-    max-w-[760px] lg:max-w-[900px] xl:max-w-[1000px]
-    mx-auto
+    w-full lg:max-w-[1000px] lg:mx-auto
     text-[15px]
     font-medium
     leading-[28.125px]
     tracking-[0.5px]
-    px-4 sm:px-6
+    px-0
     py-[25px]
     mt-0 sm:mt-[20px] md:mt-[40px]
   "
 >
-          Welcome to BzAnalytics blogs, where we share in-depth articles, case
-          studies, and insights on data analytics, business intelligence, and
-          industry trends. Our blog is designed to help you stay informed and
-          enhance your knowledge with expert advice and analysis.
-        </p>
-
+  Welcome to BzAnalytics blogs, where we share in-depth articles, case
+  studies, and insights on  
+  <span className="hidden lg:inline"><br /></span>
+  data analytics, business intelligence, and
+  industry trends. Our blog is designed to help you stay 
+  <span className="hidden lg:inline"><br /></span>
+  informed and enhance your knowledge with expert advice and analysis.
+</p>
         {/* slider */}
         <Slider />
         {/* categories */}

@@ -39,13 +39,13 @@ const Hero = () => {
       <div
         className={`absolute inset-0 ${
           darkMode
-            ? "bg-gradient-to-b  from-black/90 via-black/50 to-black/100"
+            ? "bg-gradient-to-b  from-black/50 via-black/50 to-black/100"
             : "bg-gradient-to-b from-white/70 via-white/40 to-white/80"
         }`}
       />
 
       {/* Content */}
-      <div className="relative z-10 w-full px-4 sm:px-6 md:px-20 lg:px-40 text-left">
+     <div className="relative z-10 w-full px-4 sm:px-6 md:px-20 lg:px-40 text-left mt-15">
 
         {/* Breadcrumb */}
         <div
