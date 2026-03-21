@@ -12,9 +12,10 @@ const Cursor = () => {
     };
 
     window.addEventListener("mousemove", moveCursor);
+    
     return () => window.removeEventListener("mousemove", moveCursor);
   }, []);
-  
+
   return (
     <>
       {/* Outer Circle */}
