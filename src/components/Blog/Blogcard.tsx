@@ -10,6 +10,12 @@ type Blog = {
   readTime: string;
   image: string;
 };
+const slugify = (text: string) =>
+  text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
 
 const Blogcard = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -35,7 +41,7 @@ const Blogcard = () => {
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-10 items-stretch">
         {blogs.map((blog) => (
-          <Link href={`/blog/${blog.id}`} key={blog.id}>
+        <Link href={`/blog/${slugify(blog.title)}`} key={blog.id}>
           <div
            
             className="w-full max-w-[374px] h-full
